@@ -82,9 +82,7 @@
         <a class="project__host" href="${escapeAttr(project.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(host)}</a>
         <p class="project__blurb">${escapeHtml(project.blurb)}</p>
         <div class="project__meta">${tags}</div>
-        <a class="project__link" href="${escapeAttr(project.url)}" target="_blank" rel="noopener noreferrer">
-          ${linkLabel(project)} ${externalIcon()}
-        </a>
+        ${storeLinks(project)}
       </li>
     `;
   }
