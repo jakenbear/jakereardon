@@ -60,8 +60,12 @@ window.PORTFOLIO_PROJECTS = [
     title: 'Always Sometimes Monsters',
     year: 2014,
     url: 'https://store.steampowered.com/app/274310/Always_Sometimes_Monsters/',
-    blurb: 'A critically acclaimed narrative RPG about poverty, love, and the messy reality of chasing your dreams — every choice reshapes your life and the people in it.',
-    tags: ['narrative', 'rpg', 'steam']
+    stores: [
+      { label: 'Steam', url: 'https://store.steampowered.com/app/274310/Always_Sometimes_Monsters/' },
+      { label: 'Switch', url: 'https://www.nintendo.com/en-ca/store/products/always-sometimes-monsters-switch/' }
+    ],
+    blurb: 'A critically acclaimed narrative RPG about poverty, love, and the messy reality of chasing your dreams — every choice reshapes your life and the people in it. On Steam and Nintendo Switch.',
+    tags: ['narrative', 'rpg', 'steam', 'switch']
   },
   {
     id: 'sometimes-always-monsters',
@@ -78,8 +82,12 @@ window.PORTFOLIO_PROJECTS = [
     title: 'Burger Patrol',
     year: 2022,
     url: 'https://store.steampowered.com/app/313700/Burger_Patrol/',
-    blurb: 'Arcade tile-matching chaos — stack burger combos, beat seven modes, and chase the leaderboard before the pile hits the top.',
-    tags: ['arcade', 'puzzle', 'steam']
+    stores: [
+      { label: 'Steam', url: 'https://store.steampowered.com/app/313700/Burger_Patrol/' },
+      { label: 'Switch', url: 'https://www.nintendo.com/en-ca/store/products/burger-patrol-switch/' }
+    ],
+    blurb: 'Arcade tile-matching chaos — stack burger combos, beat seven modes, and chase the leaderboard before the pile hits the top. On Steam and Nintendo Switch.',
+    tags: ['arcade', 'puzzle', 'steam', 'switch']
   },
   {
     id: 'dog-gone-golfing',
@@ -87,6 +95,10 @@ window.PORTFOLIO_PROJECTS = [
     title: 'Dog Gone Golfing',
     year: 2017,
     url: 'https://store.steampowered.com/app/665590/DOG_GONE_GOLFING/',
+    stores: [
+      { label: 'Steam', url: 'https://store.steampowered.com/app/665590/DOG_GONE_GOLFING/' },
+      { label: 'Switch', url: 'https://www.nintendo.com/us/store/products/dog-gone-golfing-switch/' }
+    ],
     blurb: 'Cute dogs, hockey pucks, and procedural courses — pick-up-and-play arcade golf for up to eight players on Steam and Nintendo Switch.',
     tags: ['arcade', 'multiplayer', 'steam', 'switch']
   },

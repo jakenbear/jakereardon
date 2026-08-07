@@ -21,6 +21,26 @@
     return 'Open site';
   }
 
+  function storeLinks(project) {
+    const stores = Array.isArray(project.stores) && project.stores.length
+      ? project.stores
+      : [{ label: linkLabel(project), url: project.url }];
+
+    return `
+      <div class="project__actions">
+        ${stores
+          .map(
+            (store, i) => `
+          <a class="project__link${i === 0 ? '' : ' project__link--ghost'}" href="${escapeAttr(store.url)}" target="_blank" rel="noopener noreferrer">
+            ${escapeHtml(store.label)} ${externalIcon()}
+          </a>
+        `
+          )
+          .join('')}
+      </div>
+    `;
+  }
+
   function externalIcon() {
     return `<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6 3h7v7h-1.5V5.56L4.53 12.53 3.47 11.47 10.44 4.5H6V3z"/></svg>`;
   }
