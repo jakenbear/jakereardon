@@ -30,7 +30,9 @@ Edit [`projects.js`](projects.js):
 ```js
 {
   id: 'unique-slug',
+  category: 'sites', // or 'games'
   title: 'Name',
+  year: 2024, // optional, mainly for games
   url: 'https://example.com/',
   blurb: 'One short sentence.',
   tags: ['web']

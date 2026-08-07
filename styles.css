@@ -690,6 +690,12 @@ button {
   }
 }
 
+@media (max-width: 960px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 860px) {
   .hero {
     grid-template-columns: 1fr;
@@ -710,24 +716,22 @@ button {
   }
 }
 
-@media (max-width: 720px) {
-  .project {
-    grid-template-columns: auto 1fr;
-    align-items: start;
+@media (max-width: 560px) {
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 
-  .project__aside {
-    grid-column: 1 / -1;
-    width: 100%;
-    justify-content: stretch;
+  .projects__header {
+    align-items: stretch;
   }
 
-  .project__link {
+  .tabs {
     width: 100%;
   }
 
-  .project__index {
-    padding-top: 0.2rem;
+  .tab {
+    flex: 1;
+    text-align: center;
   }
 }
 
