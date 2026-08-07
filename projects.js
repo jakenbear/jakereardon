@@ -60,6 +60,14 @@ window.PORTFOLIO_PROJECTS = [
     blurb: 'Basketball shot tracking in progress — log makes and misses, watch your percentage climb, and turn practice into something you can actually measure.',
     tags: ['web', 'sports', 'in development']
   },
+  {
+    id: 'nhl-scores',
+    category: 'sites',
+    title: 'NHL Scores',
+    url: 'https://nhl-scores.onrender.com/',
+    blurb: 'A clean, no-frills NHL scoreboard — tonight’s games, final results, and the night’s slate without the noise.',
+    tags: ['web', 'sports']
+  },
 
   // —— Games (from vagabond.dog/games) ——
   {
