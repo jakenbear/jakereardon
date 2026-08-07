@@ -732,8 +732,8 @@ button {
 }
 
 @media (min-width: 961px) {
-  .project--video {
-    grid-column: span 2;
+  .project-grid:has(.project--video) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

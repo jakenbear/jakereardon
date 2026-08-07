@@ -154,5 +154,41 @@ window.PORTFOLIO_PROJECTS = [
     youtubeId: '-ZDo3T-92Dc',
     blurb: 'On-camera commercial work — a polished 45-second Norseman spot that shows the performance side of the portfolio.',
     tags: ['acting', 'commercial', 'youtube']
+  },
+  {
+    id: 'beacon-infinity-rule-them-all',
+    category: 'acting',
+    title: 'Beacon Infinity Light — One Light to Rule Them All',
+    url: 'https://www.youtube.com/watch?v=BE7HXXw_sK8',
+    youtubeId: 'BE7HXXw_sK8',
+    blurb: 'Lind Equipment commercial — introducing the Beacon Infinity Light as the one light built to handle it all.',
+    tags: ['acting', 'commercial', 'youtube']
+  },
+  {
+    id: 'beacon-infinity-versatile',
+    category: 'acting',
+    title: 'Beacon Infinity Light — It’s Versatile',
+    url: 'https://www.youtube.com/watch?v=AtH1l8kD5Vg',
+    youtubeId: 'AtH1l8kD5Vg',
+    blurb: 'Commercial spot highlighting versatility — one Beacon Infinity Light, endless ways to get the job done.',
+    tags: ['acting', 'commercial', 'youtube']
+  },
+  {
+    id: 'beacon-infinity-durable',
+    category: 'acting',
+    title: 'Beacon Infinity Light — It’s Durable',
+    url: 'https://www.youtube.com/watch?v=xnrFKrMvtyo',
+    youtubeId: 'xnrFKrMvtyo',
+    blurb: 'Built-tough commercial beat for Lind Equipment — proving the Beacon Infinity Light can take a beating and keep shining.',
+    tags: ['acting', 'commercial', 'youtube']
+  },
+  {
+    id: 'beacon-infinity-weatherproof',
+    category: 'acting',
+    title: 'Beacon Infinity Light — It’s Weatherproof',
+    url: 'https://www.youtube.com/watch?v=OqQPMoy3CLY',
+    youtubeId: 'OqQPMoy3CLY',
+    blurb: 'Weatherproof commercial spot — rain or shine, the Beacon Infinity Light stays ready for the workday.',
+    tags: ['acting', 'commercial', 'youtube']
   }
 ];
