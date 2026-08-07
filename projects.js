@@ -34,5 +34,12 @@ window.PORTFOLIO_PROJECTS = [
     url: 'https://script-buddy.onrender.com/',
     blurb: 'A rehearsal companion for actors — load a script, claim your role, and run scenes with cues, line control, and voice-ready practice.',
     tags: ['web', 'tools', 'audio']
+  },
+  {
+    id: 'fifth-line-code',
+    title: 'The Fifth Line Code',
+    url: 'https://thefifthlinecode.onrender.com/',
+    blurb: 'Portfolio tracker for NHL Breakaway collectible NFTs — keep your cards, value, and collection in one place like a digital fifth line.',
+    tags: ['web', 'sports', 'nft']
   }
 ];
