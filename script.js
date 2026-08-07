@@ -1,6 +1,9 @@
 (function () {
   const listEl = document.getElementById('projectList');
   const summaryEl = document.getElementById('projectsSummary');
+  const tabs = document.querySelectorAll('.tab');
+
+  let activeTab = 'sites';
   const projects = Array.isArray(window.PORTFOLIO_PROJECTS)
     ? window.PORTFOLIO_PROJECTS.map((p) => ({ ...p }))
     : [];
@@ -11,6 +14,11 @@
     } catch {
       return url;
     }
+  }
+
+  function linkLabel(project) {
+    if (project.category === 'games') return 'View on Steam';
+    return 'Open site';
   }
 
   function externalIcon() {
@@ -29,45 +37,66 @@
     return escapeHtml(value).replace(/'/g, '&#39;');
   }
 
-  function projectRow(project, index) {
+  function filtered() {
+    return projects.filter((p) => (p.category || 'sites') === activeTab);
+  }
+
+  function projectCard(project, index) {
     const tags = (project.tags || [])
       .map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`)
       .join('');
 
     const num = String(index + 1).padStart(2, '0');
     const host = hostFromUrl(project.url);
+    const year = project.year
+      ? `<span class="project__year">${escapeHtml(String(project.year))}</span>`
+      : '';
 
     return `
-      <li class="project" style="animation-delay: ${0.1 + index * 0.08}s">
-        <span class="project__index" aria-hidden="true">${num}</span>
-        <div class="project__body">
-          <h3 class="project__title">${escapeHtml(project.title)}</h3>
-          <a class="project__host" href="${escapeAttr(project.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(host)}</a>
-          <p class="project__blurb">${escapeHtml(project.blurb)}</p>
-          <div class="project__meta">${tags}</div>
+      <li class="project" style="animation-delay: ${0.06 + index * 0.05}s">
+        <div class="project__top">
+          <span class="project__index" aria-hidden="true">${num}</span>
+          ${year}
         </div>
-        <div class="project__aside">
-          <a class="project__link" href="${escapeAttr(project.url)}" target="_blank" rel="noopener noreferrer">
-            Open site ${externalIcon()}
-          </a>
-        </div>
+        <h3 class="project__title">${escapeHtml(project.title)}</h3>
+        <a class="project__host" href="${escapeAttr(project.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(host)}</a>
+        <p class="project__blurb">${escapeHtml(project.blurb)}</p>
+        <div class="project__meta">${tags}</div>
+        <a class="project__link" href="${escapeAttr(project.url)}" target="_blank" rel="noopener noreferrer">
+          ${linkLabel(project)} ${externalIcon()}
+        </a>
       </li>
     `;
   }
 
   function render() {
-    const n = projects.length;
-    summaryEl.textContent = n
-      ? `${n} project${n === 1 ? '' : 's'}`
-      : 'Add projects in projects.js';
+    const items = filtered();
+    const sitesCount = projects.filter((p) => (p.category || 'sites') === 'sites').length;
+    const gamesCount = projects.filter((p) => p.category === 'games').length;
 
-    if (!n) {
-      listEl.innerHTML = '<li><p class="project-list__empty">No projects yet — add some in projects.js.</p></li>';
+    summaryEl.textContent = `${sitesCount} site${sitesCount === 1 ? '' : 's'} · ${gamesCount} game${gamesCount === 1 ? '' : 's'}`;
+
+    listEl.setAttribute('aria-labelledby', activeTab === 'games' ? 'tab-games' : 'tab-sites');
+
+    if (!items.length) {
+      listEl.innerHTML = `<li class="project-grid__empty"><p>Nothing in this tab yet — add entries in projects.js.</p></li>`;
       return;
     }
 
-    listEl.innerHTML = projects.map((p, i) => projectRow(p, i)).join('');
+    listEl.innerHTML = items.map((p, i) => projectCard(p, i)).join('');
   }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      activeTab = tab.dataset.tab;
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      render();
+    });
+  });
 
   render();
 })();

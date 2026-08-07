@@ -1,7 +1,12 @@
-/** Append projects here — title, url, blurb, tags. */
+/**
+ * Portfolio entries.
+ * category: 'sites' | 'games'
+ */
 window.PORTFOLIO_PROJECTS = [
+  // —— Sites ——
   {
     id: 'fitlapse',
+    category: 'sites',
     title: 'FitLapse',
     url: 'https://fitlapse.onrender.com/',
     blurb: 'Private fitness progress tracker — scrub photos, ghost overlay, GIFs and composites that stay on your device.',
@@ -9,6 +14,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: 'ddpy-spinner',
+    category: 'sites',
     title: 'DDPY Spinner',
     url: 'https://ddpy-spinner.onrender.com/',
     blurb: 'DDP Yoga workout spinner — filter by difficulty and duration, then spin for your next session.',
@@ -16,6 +22,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: 'dmtw',
+    category: 'sites',
     title: 'Did My Team Win',
     url: 'http://dmtw.ca/',
     blurb: 'Spoiler-free NHL (and MLB) results — win or loss only, so replays stay exciting.',
@@ -23,6 +30,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: 'nhl-daily-viz',
+    category: 'sites',
     title: 'NHL Daily Visualizer',
     url: 'https://nhl-daily-viz.onrender.com/',
     blurb: 'Nightly NHL scoreboard with cinematic 3D goal visualizations — catch up on the slate and watch the finishing plays come alive.',
@@ -30,6 +38,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: 'script-buddy',
+    category: 'sites',
     title: 'Script Buddy',
     url: 'https://script-buddy.onrender.com/',
     blurb: 'A rehearsal companion for actors — load a script, claim your role, and run scenes with cues, line control, and voice-ready practice.',
@@ -37,9 +46,66 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: 'fifth-line-code',
+    category: 'sites',
     title: 'The Fifth Line Code',
     url: 'https://thefifthlinecode.onrender.com/',
     blurb: 'Portfolio tracker for NHL Breakaway collectible NFTs — keep your cards, value, and collection in one place like a digital fifth line.',
     tags: ['web', 'sports', 'nft']
+  },
+
+  // —— Games (from vagabond.dog/games) ——
+  {
+    id: 'always-sometimes-monsters',
+    category: 'games',
+    title: 'Always Sometimes Monsters',
+    year: 2014,
+    url: 'https://store.steampowered.com/app/274310/Always_Sometimes_Monsters/',
+    blurb: 'A critically acclaimed narrative RPG about poverty, love, and the messy reality of chasing your dreams — every choice reshapes your life and the people in it.',
+    tags: ['narrative', 'rpg', 'steam']
+  },
+  {
+    id: 'sometimes-always-monsters',
+    category: 'games',
+    title: 'Sometimes Always Monsters',
+    year: 2020,
+    url: 'https://store.steampowered.com/app/441440/Sometimes_Always_Monsters/',
+    blurb: 'The sequel hits the road with a newlywed author fighting plagiarism rumors — reputation, relationships, and the lies we tell ourselves, with save import from the original.',
+    tags: ['narrative', 'rpg', 'steam']
+  },
+  {
+    id: 'burger-patrol',
+    category: 'games',
+    title: 'Burger Patrol',
+    year: 2022,
+    url: 'https://store.steampowered.com/app/313700/Burger_Patrol/',
+    blurb: 'Arcade tile-matching chaos — stack burger combos, beat seven modes, and chase the leaderboard before the pile hits the top.',
+    tags: ['arcade', 'puzzle', 'steam']
+  },
+  {
+    id: 'dog-gone-golfing',
+    category: 'games',
+    title: 'Dog Gone Golfing',
+    year: 2017,
+    url: 'https://store.steampowered.com/app/665590/DOG_GONE_GOLFING/',
+    blurb: 'Cute dogs, hockey pucks, and procedural courses — pick-up-and-play arcade golf for up to eight players on Steam and Nintendo Switch.',
+    tags: ['arcade', 'multiplayer', 'steam', 'switch']
+  },
+  {
+    id: 'karen-outrage-simulator',
+    category: 'games',
+    title: 'Karen: An Outrage Simulator',
+    year: 2020,
+    url: 'https://store.steampowered.com/app/1361110/Karen_An_Outrage_Simulator/',
+    blurb: 'You are Karen. Argue through absurd scenarios, demand the manager, and weaponize entitlement in a short, cathartic comedy hit.',
+    tags: ['meme', 'comedy', 'steam']
+  },
+  {
+    id: 'stonks-market',
+    category: 'games',
+    title: 'The Stonks Market',
+    year: 2021,
+    url: 'https://store.steampowered.com/app/1554080/The_Stonks_Market/',
+    blurb: 'Diamond hands meet narrative misadventure — gamble your life savings on ludicrous trades in a satirical hour of meme-stock capitalism.',
+    tags: ['meme', 'narrative', 'steam']
   }
 ];

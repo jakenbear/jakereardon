@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jake Reardon — Portfolio</title>
-  <meta name="description" content="Selected sites and projects by Jake Reardon.">
+  <meta name="description" content="Selected sites and shipped games by Jake Reardon.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -25,11 +25,11 @@
         <span class="hero__brand-line">Jake</span>
         <span class="hero__brand-line hero__brand-line--accent">Reardon</span>
       </p>
-      <h1 class="hero__headline">A few sites I’ve built and shipped.</h1>
-      <p class="hero__lede">Small web projects, live in the wild — fitness tools, sports Viz, spoiler-free scores, and rehearsal apps.</p>
+      <h1 class="hero__headline">Sites I’ve shipped — and games that made it out the door.</h1>
+      <p class="hero__lede">Web tools in the wild, plus titles from Vagabond Dog — narrative RPGs, arcade chaos, and meme-game mischief.</p>
       <div class="hero__actions">
-        <a class="btn btn--primary" href="#projects">See projects</a>
-        <a class="btn btn--ghost" href="https://fitlapse.onrender.com/" target="_blank" rel="noopener noreferrer">Open a live build</a>
+        <a class="btn btn--primary" href="#projects">See the work</a>
+        <a class="btn btn--ghost" href="https://vagabond.dog/games" target="_blank" rel="noopener noreferrer">Vagabond games</a>
       </div>
     </div>
 
@@ -60,13 +60,23 @@
         <h2 class="projects__title">Projects</h2>
         <p class="projects__summary" id="projectsSummary"></p>
       </div>
+      <div class="tabs" role="tablist" aria-label="Project type">
+        <button type="button" class="tab is-active" role="tab" id="tab-sites" aria-selected="true" aria-controls="projectList" data-tab="sites">Sites</button>
+        <button type="button" class="tab" role="tab" id="tab-games" aria-selected="false" aria-controls="projectList" data-tab="games">Games</button>
+      </div>
     </div>
-    <ul class="project-list" id="projectList"></ul>
+    <ul class="project-grid" id="projectList" role="tabpanel" aria-labelledby="tab-sites"></ul>
   </main>
 
   <footer class="footer">
     <div class="footer__rule" aria-hidden="true"></div>
-    <p><span>Jake Reardon</span><span class="footer__sep" aria-hidden="true"></span><a href="https://github.com/jakenbear" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+    <p>
+      <span>Jake Reardon</span>
+      <span class="footer__sep" aria-hidden="true"></span>
+      <a href="https://github.com/jakenbear" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer__sep" aria-hidden="true"></span>
+      <a href="https://vagabond.dog/games" target="_blank" rel="noopener noreferrer">Vagabond Dog</a>
+    </p>
   </footer>
 
   <script src="projects.js"></script>
