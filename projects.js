@@ -68,6 +68,14 @@ window.PORTFOLIO_PROJECTS = [
     blurb: 'A clean, no-frills NHL scoreboard — tonight’s games, final results, and the night’s slate without the noise.',
     tags: ['web', 'sports']
   },
+  {
+    id: 'poolie-destination',
+    category: 'sites',
+    title: 'Poolie Destination',
+    url: 'https://pooliedestination.com/',
+    blurb: 'Home base for fan-run survivor pools — play and manage NHL, NFL, and MLB brackets for fun, week after week, without the spreadsheet headache.',
+    tags: ['web', 'sports', 'pools']
+  },
 
   // —— Games (from vagabond.dog/games) ——
   {
