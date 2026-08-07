@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: jakereardon
+    runtime: static
+    plan: free
+    buildCommand: "true"
+    staticPublishPath: .
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /index.html
+        name: Cache-Control
+        value: no-cache

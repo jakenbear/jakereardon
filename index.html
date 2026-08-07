@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jake Reardon — Built &amp; Building</title>
+  <meta name="description" content="Projects Jake Reardon has built and is still shaping — a live portfolio and personal checklist.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true">
+    <div class="atmosphere__wash"></div>
+    <div class="atmosphere__beam"></div>
+    <div class="atmosphere__orb atmosphere__orb--a"></div>
+    <div class="atmosphere__orb atmosphere__orb--b"></div>
+    <div class="atmosphere__grain"></div>
+  </div>
+
+  <header class="hero">
+    <div class="hero__copy">
+      <p class="hero__brand">
+        <span class="hero__brand-line">Jake</span>
+        <span class="hero__brand-line hero__brand-line--accent">Reardon</span>
+      </p>
+      <h1 class="hero__headline">Sites I’ve shipped — and a list of what’s still in motion.</h1>
+      <p class="hero__lede">A place to show people the work, and remind myself what still needs a pass.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#projects">See projects</a>
+        <a class="btn btn--ghost" href="https://fitlapse.onrender.com/" target="_blank" rel="noopener noreferrer">Open a live build</a>
+      </div>
+    </div>
+
+    <div class="hero__visual" aria-hidden="true">
+      <div class="stack">
+        <div class="stack__frame stack__frame--back">
+          <span class="stack__dots"></span>
+          <span class="stack__bar"></span>
+        </div>
+        <div class="stack__frame stack__frame--mid">
+          <span class="stack__dots"></span>
+          <span class="stack__bar stack__bar--wide"></span>
+          <span class="stack__block"></span>
+        </div>
+        <div class="stack__frame stack__frame--front">
+          <span class="stack__dots"></span>
+          <div class="stack__mark">JR</div>
+          <span class="stack__chip">live</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="projects" class="projects">
+    <div class="projects__header">
+      <div>
+        <p class="projects__eyebrow">Checklist</p>
+        <h2 class="projects__title">Projects</h2>
+        <p class="projects__summary" id="projectsSummary" aria-live="polite"></p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter by status">
+        <button type="button" class="filter is-active" data-filter="all">All</button>
+        <button type="button" class="filter" data-filter="live">Live</button>
+        <button type="button" class="filter" data-filter="revisit">Revisit</button>
+        <button type="button" class="filter" data-filter="todo">To-do</button>
+      </div>
+    </div>
+    <ul class="project-list" id="projectList"></ul>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__rule" aria-hidden="true"></div>
+    <p><span>Jake Reardon</span><span class="footer__sep" aria-hidden="true"></span><a href="https://github.com/jakenbear" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+  </footer>
+
+  <script src="projects.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
