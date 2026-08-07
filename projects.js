@@ -20,5 +20,19 @@ window.PORTFOLIO_PROJECTS = [
     url: 'http://dmtw.ca/',
     blurb: 'Spoiler-free NHL (and MLB) results — win or loss only, so replays stay exciting.',
     tags: ['web', 'sports']
+  },
+  {
+    id: 'nhl-daily-viz',
+    title: 'NHL Daily Visualizer',
+    url: 'https://nhl-daily-viz.onrender.com/',
+    blurb: 'Nightly NHL scoreboard with cinematic 3D goal visualizations — catch up on the slate and watch the finishing plays come alive.',
+    tags: ['web', 'sports', '3d']
+  },
+  {
+    id: 'script-buddy',
+    title: 'Script Buddy',
+    url: 'https://script-buddy.onrender.com/',
+    blurb: 'A rehearsal companion for actors — load a script, claim your role, and run scenes with cues, line control, and voice-ready practice.',
+    tags: ['web', 'tools', 'audio']
   }
 ];
