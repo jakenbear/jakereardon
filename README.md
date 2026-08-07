@@ -1,6 +1,10 @@
 # Jake Reardon — Portfolio
 
-Static site for showcasing live projects and tracking personal status (live / revisit / to-do). Built for Render Static Sites at `jakereardon.onrender.com`.
+Standalone static site for showcasing live projects and tracking personal status (live / revisit / to-do).
+
+**This is its own repo.** It is not part of FitLapse / fitness-progress-viewer.
+
+Meant for Render at `jakereardon.onrender.com`.
 
 ## Local preview
 
@@ -10,22 +14,32 @@ Open `index.html` in a browser, or from this folder:
 npx serve .
 ```
 
+## Push to a new GitHub repo
+
+Create an **empty** repo on GitHub named something like `jakereardon` (do not push into fitness-progress-viewer), then:
+
+```bash
+cd Z:\_SOURCE_CODE_\jakereardon
+git remote add origin https://github.com/jakenbear/jakereardon.git
+git push -u origin main
+```
+
+(Use your real GitHub username/repo URL if different.)
+
 ## Deploy on Render
 
-1. Push this folder to a GitHub repo (or add it as a subdirectory and set the root directory).
-2. In Render: **New → Static Site**.
-3. Connect the repo.
-4. Settings:
-   - **Root Directory**: `jakereardon` (if the repo is a monorepo parent) or leave blank if this folder *is* the repo
-   - **Build Command**: leave empty
+1. Render → **New → Static Site**
+2. Connect the **jakereardon** GitHub repo (not FitLapse)
+3. Settings:
+   - **Build Command**: leave empty (or `true`)
    - **Publish Directory**: `.`
-5. After deploy, set the subdomain to `jakereardon` (or attach a custom domain).
+4. After deploy, set the subdomain to `jakereardon`
 
-You can also deploy from [`render.yaml`](render.yaml) via Blueprint.
+[`render.yaml`](render.yaml) is included if you prefer Blueprint deploy.
 
 ## Adding a project
 
-Edit [`projects.js`](projects.js) and append an object:
+Edit [`projects.js`](projects.js):
 
 ```js
 {
