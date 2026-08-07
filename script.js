@@ -18,6 +18,7 @@
 
   function linkLabel(project) {
     if (project.category === 'games') return 'View on Steam';
+    if (project.category === 'acting' || project.youtubeId) return 'Watch on YouTube';
     return 'Open site';
   }
 
@@ -37,6 +38,23 @@
         `
           )
           .join('')}
+      </div>
+    `;
+  }
+
+  function videoEmbed(project) {
+    if (!project.youtubeId) return '';
+    const src = `https://www.youtube.com/embed/${encodeURIComponent(project.youtubeId)}`;
+    return `
+      <div class="project__video">
+        <iframe
+          src="${src}"
+          title="${escapeAttr(project.title)}"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
       </div>
     `;
   }
@@ -61,6 +79,10 @@
     return projects.filter((p) => (p.category || 'sites') === activeTab);
   }
 
+  function tabId(name) {
+    return `tab-${name}`;
+  }
+
   function projectCard(project, index) {
     const tags = (project.tags || [])
       .map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`)
@@ -71,15 +93,17 @@
     const year = project.year
       ? `<span class="project__year">${escapeHtml(String(project.year))}</span>`
       : '';
+    const isVideo = Boolean(project.youtubeId);
 
     return `
-      <li class="project" style="animation-delay: ${0.06 + index * 0.05}s">
+      <li class="project${isVideo ? ' project--video' : ''}" style="animation-delay: ${0.06 + index * 0.05}s">
         <div class="project__top">
           <span class="project__index" aria-hidden="true">${num}</span>
           ${year}
         </div>
         <h3 class="project__title">${escapeHtml(project.title)}</h3>
         <a class="project__host" href="${escapeAttr(project.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(host)}</a>
+        ${videoEmbed(project)}
         <p class="project__blurb">${escapeHtml(project.blurb)}</p>
         <div class="project__meta">${tags}</div>
         ${storeLinks(project)}
@@ -91,10 +115,11 @@
     const items = filtered();
     const sitesCount = projects.filter((p) => (p.category || 'sites') === 'sites').length;
     const gamesCount = projects.filter((p) => p.category === 'games').length;
+    const actingCount = projects.filter((p) => p.category === 'acting').length;
 
-    summaryEl.textContent = `${sitesCount} site${sitesCount === 1 ? '' : 's'} · ${gamesCount} game${gamesCount === 1 ? '' : 's'}`;
+    summaryEl.textContent = `${sitesCount} site${sitesCount === 1 ? '' : 's'} · ${gamesCount} game${gamesCount === 1 ? '' : 's'} · ${actingCount} acting`;
 
-    listEl.setAttribute('aria-labelledby', activeTab === 'games' ? 'tab-games' : 'tab-sites');
+    listEl.setAttribute('aria-labelledby', tabId(activeTab));
 
     if (!items.length) {
       listEl.innerHTML = `<li class="project-grid__empty"><p>Nothing in this tab yet — add entries in projects.js.</p></li>`;

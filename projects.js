@@ -1,6 +1,6 @@
 /**
  * Portfolio entries.
- * category: 'sites' | 'games'
+ * category: 'sites' | 'games' | 'acting'
  */
 window.PORTFOLIO_PROJECTS = [
   // —— Sites ——
@@ -143,5 +143,16 @@ window.PORTFOLIO_PROJECTS = [
     url: 'https://store.steampowered.com/app/1554080/The_Stonks_Market/',
     blurb: 'Diamond hands meet narrative misadventure — gamble your life savings on ludicrous trades in a satirical hour of meme-stock capitalism.',
     tags: ['meme', 'narrative', 'steam']
+  },
+
+  // —— Acting ——
+  {
+    id: 'norseman-commercial',
+    category: 'acting',
+    title: 'Norseman Commercial',
+    url: 'https://www.youtube.com/watch?v=-ZDo3T-92Dc',
+    youtubeId: '-ZDo3T-92Dc',
+    blurb: 'On-camera commercial work — a polished 45-second Norseman spot that shows the performance side of the portfolio.',
+    tags: ['acting', 'commercial', 'youtube']
   }
 ];

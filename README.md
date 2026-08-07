@@ -30,10 +30,11 @@ Edit [`projects.js`](projects.js):
 ```js
 {
   id: 'unique-slug',
-  category: 'sites', // or 'games'
+  category: 'sites', // or 'games' | 'acting'
   title: 'Name',
   year: 2024, // optional, mainly for games
   url: 'https://example.com/',
+  youtubeId: 'abc123', // optional, for Acting embeds
   blurb: 'One short sentence.',
   tags: ['web']
 }

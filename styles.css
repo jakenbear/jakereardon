@@ -596,6 +596,29 @@ button {
   background: rgba(255, 255, 255, 0.9);
 }
 
+.project--video {
+  grid-column: span 1;
+}
+
+.project__video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 0.9rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #101612;
+  border: 1px solid var(--line);
+}
+
+.project__video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .project__link:focus-visible {
   outline: 3px solid var(--citrus);
   outline-offset: 3px;
@@ -705,6 +728,12 @@ button {
   }
   to {
     transform: rotate(14deg) translateX(-24px);
+  }
+}
+
+@media (min-width: 961px) {
+  .project--video {
+    grid-column: span 2;
   }
 }
 
