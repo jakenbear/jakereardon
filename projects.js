@@ -52,6 +52,14 @@ window.PORTFOLIO_PROJECTS = [
     blurb: 'Portfolio tracker for NHL Breakaway collectible NFTs — keep your cards, value, and collection in one place like a digital fifth line.',
     tags: ['web', 'sports', 'nft']
   },
+  {
+    id: 'hoopr',
+    category: 'sites',
+    title: 'Hoopr',
+    url: 'https://hoopr.onrender.com/',
+    blurb: 'Basketball shot tracking in progress — log makes and misses, watch your percentage climb, and turn practice into something you can actually measure.',
+    tags: ['web', 'sports', 'in development']
+  },
 
   // —— Games (from vagabond.dog/games) ——
   {
