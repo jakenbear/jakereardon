@@ -654,11 +654,16 @@ button {
 @media (max-width: 720px) {
   .project {
     grid-template-columns: auto 1fr;
+    align-items: start;
   }
 
   .project__aside {
     grid-column: 1 / -1;
-    min-width: 0;
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .project__link {
     width: 100%;
   }
 
