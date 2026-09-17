@@ -57,23 +57,52 @@
     `;
   }
 
+  function youtubeThumb(project) {
+    if (project.thumbnail) {
+      return { src: project.thumbnail, fallback: '' };
+    }
+    const id = encodeURIComponent(project.youtubeId);
+    return {
+      src: `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`,
+      fallback: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
+    };
+  }
+
   function videoEmbed(project) {
     if (!project.youtubeId) return '';
-    if (project.thumbnail) {
-      return `
-        <div class="project__video">
-          <button type="button" class="project__poster" data-youtube-id="${escapeAttr(project.youtubeId)}" data-title="${escapeAttr(project.title)}" aria-label="Play ${escapeAttr(project.title)}">
-            <img src="${escapeAttr(project.thumbnail)}" alt="" width="1920" height="622" />
-            <span class="project__play" aria-hidden="true"></span>
-          </button>
-        </div>
-      `;
-    }
-    return `<div class="project__video">${youtubeIframe(project, false)}</div>`;
+    const thumb = youtubeThumb(project);
+    const fallbackAttr = thumb.fallback
+      ? ` data-fallback="${escapeAttr(thumb.fallback)}"`
+      : '';
+    return `
+      <div class="project__video">
+        <button type="button" class="project__poster" data-youtube-id="${escapeAttr(project.youtubeId)}" data-title="${escapeAttr(project.title)}" aria-label="Play ${escapeAttr(project.title)}">
+          <img alt="" data-thumb="${escapeAttr(thumb.src)}"${fallbackAttr} />
+          <span class="project__play" aria-hidden="true"></span>
+        </button>
+      </div>
+    `;
   }
 
   function bindVideoPosters() {
     listEl.querySelectorAll('.project__poster').forEach((btn) => {
+      const img = btn.querySelector('img');
+      if (img && img.dataset.thumb) {
+        const useFallback = () => {
+          if (img.dataset.fallback && img.currentSrc !== img.dataset.fallback) {
+            img.src = img.dataset.fallback;
+          }
+        };
+        img.addEventListener("error", useFallback, { once: true });
+        img.addEventListener(
+          "load",
+          () => {
+            if (img.naturalWidth < 200) useFallback();
+          },
+          { once: true }
+        );
+        img.src = img.dataset.thumb;
+      }
       btn.addEventListener('click', () => {
         const wrap = btn.closest('.project__video');
         if (!wrap) return;
