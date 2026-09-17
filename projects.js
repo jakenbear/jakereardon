@@ -162,6 +162,7 @@ window.PORTFOLIO_PROJECTS = [
     title: 'Norseman Commercial',
     url: 'https://www.youtube.com/watch?v=-ZDo3T-92Dc',
     youtubeId: '-ZDo3T-92Dc',
+    thumbnail: 'assets/acting/norseman-8s.jpg',
     blurb: 'On-camera commercial work — a polished 45-second Norseman spot that shows the performance side of the portfolio.',
     tags: ['acting', 'commercial', 'youtube']
   },
@@ -198,6 +199,7 @@ window.PORTFOLIO_PROJECTS = [
     title: 'Beacon Infinity Light — It’s Weatherproof',
     url: 'https://www.youtube.com/watch?v=OqQPMoy3CLY',
     youtubeId: 'OqQPMoy3CLY',
+    thumbnail: 'assets/acting/beacon-weatherproof-2s.jpg',
     blurb: 'Weatherproof commercial spot — rain or shine, the Beacon Infinity Light stays ready for the workday.',
     tags: ['acting', 'commercial', 'youtube']
   }
