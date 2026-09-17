@@ -147,16 +147,6 @@ window.PORTFOLIO_PROJECTS = [
 
   // —— Acting ——
   {
-    id: 'delorean-black',
-    category: 'acting',
-    title: 'DeLorean Black',
-    url: 'https://www.youtube.com/watch?v=l_OMGlXXhys',
-    youtubeId: 'l_OMGlXXhys',
-    thumbnail: 'assets/acting/delorean-black-1m18.jpg',
-    blurb: 'I play a cybernetic bounder in a futuristic dystopian world — including a fight scene inside a shipping container.',
-    tags: ['acting', 'short film', 'youtube']
-  },
-  {
     id: 'norseman-commercial',
     category: 'acting',
     title: 'Norseman Commercial',
@@ -165,6 +155,16 @@ window.PORTFOLIO_PROJECTS = [
     thumbnail: 'assets/acting/norseman-8s.jpg',
     blurb: 'On-camera commercial work — a polished 45-second Norseman spot that shows the performance side of the portfolio.',
     tags: ['acting', 'commercial', 'youtube']
+  },
+  {
+    id: 'delorean-black',
+    category: 'acting',
+    title: 'DeLorean Black',
+    url: 'https://www.youtube.com/watch?v=l_OMGlXXhys',
+    youtubeId: 'l_OMGlXXhys',
+    thumbnail: 'assets/acting/delorean-black-1m18.jpg',
+    blurb: 'I play a cybernetic bounder in a futuristic dystopian world — including a fight scene inside a shipping container.',
+    tags: ['acting', 'short film', 'youtube']
   },
   {
     id: 'beacon-infinity-rule-them-all',
