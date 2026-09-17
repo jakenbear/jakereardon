@@ -25,8 +25,8 @@ window.PORTFOLIO_PROJECTS = [
     category: 'sites',
     title: 'Did My Team Win',
     url: 'http://dmtw.ca/',
-    blurb: 'Spoiler-free NHL (and MLB) results — win or loss only, so replays stay exciting.',
-    tags: ['web', 'sports']
+    blurb: 'Spoiler-free NHL, MLB, NBA, and NFL results — win or loss only, plus 3D NHL goal replays so the finishing plays still land.',
+    tags: ['web', 'sports', '3d']
   },
   {
     id: 'nhl-daily-viz',
@@ -146,6 +146,16 @@ window.PORTFOLIO_PROJECTS = [
   },
 
   // —— Acting ——
+  {
+    id: 'delorean-black',
+    category: 'acting',
+    title: 'DeLorean Black',
+    url: 'https://www.youtube.com/watch?v=l_OMGlXXhys',
+    youtubeId: 'l_OMGlXXhys',
+    thumbnail: 'assets/acting/delorean-black-1m18.jpg',
+    blurb: 'I play a cybernetic bounder in a futuristic dystopian world — including a fight scene inside a shipping container.',
+    tags: ['acting', 'short film', 'youtube']
+  },
   {
     id: 'norseman-commercial',
     category: 'acting',

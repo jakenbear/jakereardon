@@ -42,21 +42,47 @@
     `;
   }
 
+  function youtubeIframe(project, autoplay) {
+    const params = autoplay ? '?autoplay=1' : '';
+    const src = `https://www.youtube.com/embed/${encodeURIComponent(project.youtubeId)}${params}`;
+    return `
+      <iframe
+        src="${src}"
+        title="${escapeAttr(project.title)}"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    `;
+  }
+
   function videoEmbed(project) {
     if (!project.youtubeId) return '';
-    const src = `https://www.youtube.com/embed/${encodeURIComponent(project.youtubeId)}`;
-    return `
-      <div class="project__video">
-        <iframe
-          src="${src}"
-          title="${escapeAttr(project.title)}"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
-    `;
+    if (project.thumbnail) {
+      return `
+        <div class="project__video">
+          <button type="button" class="project__poster" data-youtube-id="${escapeAttr(project.youtubeId)}" data-title="${escapeAttr(project.title)}" aria-label="Play ${escapeAttr(project.title)}">
+            <img src="${escapeAttr(project.thumbnail)}" alt="" width="1920" height="622" />
+            <span class="project__play" aria-hidden="true"></span>
+          </button>
+        </div>
+      `;
+    }
+    return `<div class="project__video">${youtubeIframe(project, false)}</div>`;
+  }
+
+  function bindVideoPosters() {
+    listEl.querySelectorAll('.project__poster').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const wrap = btn.closest('.project__video');
+        if (!wrap) return;
+        wrap.innerHTML = youtubeIframe(
+          { youtubeId: btn.dataset.youtubeId, title: btn.dataset.title || 'YouTube video' },
+          true
+        );
+      });
+    });
   }
 
   function externalIcon() {
@@ -127,6 +153,7 @@
     }
 
     listEl.innerHTML = items.map((p, i) => projectCard(p, i)).join('');
+    bindVideoPosters();
   }
 
   tabs.forEach((tab) => {

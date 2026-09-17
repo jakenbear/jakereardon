@@ -611,12 +611,63 @@ button {
   border: 1px solid var(--line);
 }
 
-.project__video iframe {
+.project__video iframe,
+.project__poster,
+.project__poster img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.project__poster {
+  padding: 0;
+  cursor: pointer;
+  background: #101612;
+  color: inherit;
+  appearance: none;
+}
+
+.project__poster img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.project__play {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  background: var(--citrus);
+  box-shadow: 0 10px 24px rgba(16, 22, 18, 0.35);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.22s var(--ease), background 0.2s ease;
+}
+
+.project__play::after {
+  content: "";
+  position: absolute;
+  left: 54%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 0.55rem 0 0.55rem 0.9rem;
+  border-color: transparent transparent transparent var(--citrus-ink);
+}
+
+.project__poster:hover .project__play,
+.project__poster:focus-visible .project__play {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: var(--citrus-hot);
+}
+
+.project__poster:focus-visible {
+  outline: 3px solid var(--citrus);
+  outline-offset: 3px;
 }
 
 .project__link:focus-visible {
